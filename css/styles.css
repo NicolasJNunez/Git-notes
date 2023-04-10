@@ -1,0 +1,27 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header__logo {
+    width: 150px;
+}
+
+.imagen-terminal {
+    width: 800px;
+    box-shadow: 10px 20px 40px 5px #000000;
+}
+
+.imagen-flecha {
+    width: 200px;
+    height: 200px;
+}
+
+.imagen-flecha--pequeña {
+    width: 100px;
+    height: 100px;
+}
+
+.video-repositorio {
+    width: 1200px;
+    box-shadow: 10px 20px 40px 5px #000000;
+}
