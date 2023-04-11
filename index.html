@@ -47,7 +47,7 @@
 
                 <span class="col-12 fw-bold">.git config --global user.email "niconunez.2104@gmail.com"</span>
 
-                <span class="col-12 fw-bold">.git init <span class="fst-italic fw-normal">(Lo que va a hacer este comando es inicializar git dentro de la carpeta de este proyecto. Esta inicialización se hace una única vez en este proyecto. Convertimos de esta forma al proyecto en un repositorio que sera almacenado en la nube. Al mismo tiempo se genera una carpeta "invisible" en nuestro proyecto, si borramos esa carpeta debemos volver a inicializar git)</span></span>
+                <span class="col-12 fw-bold">.git init <span class="fst-italic fw-normal">(Lo que va a hacer este comando es inicializar git dentro de la carpeta. Esta inicialización se hace una única vez en este proyecto. Convertimos de esta forma al proyecto en un repositorio que sera almacenado en la nube. Al mismo tiempo se genera una carpeta "invisible" en nuestro proyecto, si borramos esa carpeta debemos volver a inicializar git)</span></span>
 
                 <span class="col-12 fw-bold">.git status<span class="fst-italic fw-normal"> (Me devuelve un estado del proyecto, los commits realizados y si hay archivos "untracked" apareceran en rojo)</span></span>
 
@@ -72,10 +72,41 @@
                     <img src="./img/foto-git-log.png" alt="img-git-commit" class="mb-4 mt-5 imagen-terminal">
                 </div>
 
-                <span class="col-12 fw-bold mt-4 mb-5">(HEAD -> main)<span class="fst-italic fw-normal"> La afirmación HEAD (que podemos observar en la terminal de "git log") nos aclara donde estamos parados. En este caso es la rama principal, es decir: "main"</span></span>
+                <span class="col-12 fw-bold mt-4 mb-5"><span class="text-warning">(</span><span class="text-primary">HEAD -> </span> <span class="text-success">main</span><span class="text-warning">)</span><span class="fst-italic fw-normal"> La afirmación HEAD (que podemos observar en la terminal de "git log") nos aclara donde estamos parados. En este caso es la rama principal, es decir: "main"</span></span>
+
+                <span class="col-12 fw-bold mt-4 mb-5">.git log --oneline<span class="fst-italic fw-normal"> (Esta es una manera mas simplificada para ver el historial de los commits, es de mucha utilidad tambien porque solo nos muestra los primeros digitos del ID)</span></span>
+
+                <div class="col-12 d-flex justify-content-center">
+                  <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                  <img src="./img/git-log-simplificado.png" alt="img-git-log-oneline" class="mb-5 mt-5 imagen-terminal">
+              </div>
+
+              <span class="col-12 fw-bold mt-4 mb-5">.git checkout "ID al que queremos ir"<span class="fst-italic fw-normal"> (Con este comando podemos transportarnos a un commit anterior. Para hacer esto copiamos y pegamos las primeras 6 cifras del commit, ej: git checkout f52097f. Tambien usamos este comando para movernos entre "ramas". Para hacerlo debemos copiar y pegar el nombre de la rama, ej: git checkout rama-secundaria. Si tipeamos git checkout main volveremos a la rama principal, y al ultimo commit realizado, osea "al presente")</span></span>
+
+              <span class="col-12 fw-bold mt-4 mb-5">.git branch "nombre de rama-secundaria"<span class="fst-italic fw-normal"> (Con este comando podemos crear ramas secundarias, lineas separadas donde podemos trabajar sin interferir con el trabajo de otra persona. Una vez el trabajo esté terminado, las ramas pueden volver a unirse o "mergearse")</span></span>
+
+              <div class="col-12 d-flex justify-content-center">
+                <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                <img src="./img/ramas-secundarias.png" alt="img-ramas-secundarias" class="mb-5 mt-5 imagen-terminal">
+              </div>
+
+              <span class="col-12 fw-bold mt-4 mb-5">.git branch<span class="fst-italic fw-normal"> (Con este comando podemos ver las ramas que han sido creadas)</span></span>
+
+              <div class="col-12 d-flex justify-content-center">
+                <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                <img src="./img/git-branch.png" alt="img-ramas" class="mb-5 mt-5 imagen-terminal">
+              </div>
+
+              <span class="col-12 fw-bold mt-4 mb-5">.git merge "nombre de rama-secundaria"<span class="fst-italic fw-normal"> (Con este comando "mergeamos" las ramas secundarias con la principal. Esto permite unir el trabajo de varias personas en un solo proyecto. TENER CUIDADO y fijarse de siempre estar en la rama Main cuando quiera unir las ramas secundarias)</span></span>
+
+              <div class="col-12 d-flex justify-content-center">
+                <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                <img src="./img/foto-merge.png" alt="img-merge" class="mb-5 mt-5 imagen-terminal">
+              </div>
+
             </article>
 
-            <hr class="mb-5">
+            <hr class="mb-5 mt-5">
 
             <article class="row">
 
@@ -124,6 +155,22 @@
                 </figure>
 
                 <span class="col-12 mt-4 mb-3">Este mapa conceptual que fue planteado arriba es una representación de lo que se hace dia a dia en un proyecto colaborativo.</span>
+
+                <span class="col-12 mt-4 mb-3">En caso de que queramos añadir a la "staging area" mas de un archivo, no es necesario añadirlos uno por uno. En ese caso lo que hay que hacer es:</span>
+
+                <div class="col-12 d-flex justify-content-center">
+                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                    <img src="./img/git-add-con-punto.png" alt="imagen-git-add-con-punto" class="imagen-terminal mt-5 mb-5">
+                </div>
+
+                <span class="col-12 mt-4 mb-3">En definitiva, el comando <span class="fw-bold">"git add ."</span> es el que mas usaremos debido a su practicidad.</span>
+
+                <span class="col-12 mt-4 mb-5"><span class="text text-decoration-underline">Observación:</span> Hay veces que no podemos escribir cuando estamos en la terminal viendo el listado de commits. En estos casos debemos usar las flechas del teclado y presionar la letra Q sobre la opcion END que aparece al final de la terminal. De esta forma podremos volver a escribir en la terminal</span>
+
+                <div class="col-12 d-flex justify-content-center">
+                  <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                  <img src="./img/usar-flechas-para-salir.png" alt="imagen-salir-con-flechas" class="imagen-terminal mt-5 mb-5">
+              </div>
 
             </article>
 
