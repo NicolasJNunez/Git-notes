@@ -43,9 +43,9 @@
 
                 <span class="col-12 text-decoration-underline mb-3">Comandos:</span>
 
-                <span class="col-12 fw-bold">.git config --global user.name "Nicolas Nunez" <span class="fw-normal fst-italic">(El --global aplica una configuración global y gracias a ello no necesitamos volver a realizar este tipo de configuraciones la próxima vez que iniciemos un proyecto)</span></span>
+                <span class="col-12 fw-bold">.git config --global user.name "<span class="fst-italic">Nicolas Nunez</span>" <span class="fw-normal fst-italic">(El --global aplica una configuración global y gracias a ello no necesitamos volver a realizar este tipo de configuraciones la próxima vez que iniciemos un proyecto. No olvidar las comillas)</span></span>
 
-                <span class="col-12 fw-bold">.git config --global user.email "niconunez.2104@gmail.com"</span>
+                <span class="col-12 fw-bold">.git config --global user.email "<span class="fst-italic">niconunez.2104@gmail.com</span>" <span class="fw-normal fst-italic">(No olvidar las comillas)</span></span>
 
                 <span class="col-12 fw-bold">.git init <span class="fst-italic fw-normal">(Lo que va a hacer este comando es inicializar git dentro de la carpeta. Esta inicialización se hace una única vez en este proyecto. Convertimos de esta forma al proyecto en un repositorio que sera almacenado en la nube. Al mismo tiempo se genera una carpeta "invisible" en nuestro proyecto, si borramos esa carpeta debemos volver a inicializar git)</span></span>
 
@@ -56,34 +56,34 @@
                     <img src="./img/foto-git-status.png" alt="img-git-status" class="mb-4 mt-5 imagen-terminal">
                 </div>
 
-                <span class="col-12 fw-bold mt-4">.git add "file"<span class="fst-italic fw-normal"> (Ejemplo de file: index.html) Suma un archivo a una etapa previa a hacer un commit.</span></span>
+                <span class="col-12 fw-bold mt-5">.git add <span class="fst-italic">nombre de archivo</span><span class="fst-italic fw-normal"> (Ejemplo del archivo: index.html) Suma un archivo a una etapa previa a hacer un commit.</span></span>
 
-                <span class="col-12 fw-bold mt-4 mb-4">.git commit -m "Escriba su mensaje"<span class="fst-italic fw-normal"> (Confirmaciones = commits, que siempre tienen que ir acompañadas de un mensaje. El mensaje tiene que describir las modificaciones del proyecto. No te olvides de incluir las comillas)</span></span>
+                <span class="col-12 fw-bold mt-4 mb-4">.git commit -m "<span class="fst-italic">escriba su mensaje</span>"<span class="fst-italic fw-normal"> (Confirmaciones = commits, que siempre tienen que ir acompañadas de un mensaje. El mensaje tiene que describir las modificaciones del proyecto. No te olvides de incluir las comillas)</span></span>
 
                 <div class="col-12 d-flex justify-content-center">
                     <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
                     <img src="./img/foto-git-commit.png" alt="img-git-commit" class="mb-4 mt-5 imagen-terminal">
                 </div>
 
-                <span class="col-12 fw-bold mt-4 mb-4">.git log<span class="fst-italic fw-normal"> (Me muestra el listado de commits. Las seis primeras cifras de un commit son las que usamos para referenciarlo)</span></span>
+                <span class="col-12 fw-bold mt-5 mb-4">.git log<span class="fst-italic fw-normal"> (Me muestra el listado de commits. Las seis primeras cifras de un commit son las que usamos para referenciarlo)</span></span>
 
                 <div class="col-12 d-flex justify-content-center">
                     <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
                     <img src="./img/foto-git-log.png" alt="img-git-commit" class="mb-4 mt-5 imagen-terminal">
                 </div>
 
-                <span class="col-12 fw-bold mt-4 mb-5"><span class="text-warning">(</span><span class="text-primary">HEAD -> </span> <span class="text-success">main</span><span class="text-warning">)</span><span class="fst-italic fw-normal"> La afirmación HEAD (que podemos observar en la terminal de "git log") nos aclara donde estamos parados. En este caso es la rama principal, es decir: "main"</span></span>
+                <span class="col-12 fw-bold mt-5 mb-5"><span class="text-warning">(</span><span class="text-primary">HEAD -> </span> <span class="text-success">main</span><span class="text-warning">)</span><span class="fst-italic fw-normal"> La afirmación HEAD (que podemos observar en la terminal de "git log") nos aclara donde estamos parados. En este caso es la rama principal, es decir: "main"</span></span>
 
-                <span class="col-12 fw-bold mt-4 mb-5">.git log --oneline<span class="fst-italic fw-normal"> (Esta es una manera mas simplificada para ver el historial de los commits, es de mucha utilidad tambien porque solo nos muestra los primeros digitos del ID)</span></span>
+                <span class="col-12 fw-bold mt-3 mb-5">.git log --oneline<span class="fst-italic fw-normal"> (Esta es una manera mas simplificada para ver el historial de los commits, es de mucha utilidad tambien porque solo nos muestra los primeros digitos del ID)</span></span>
 
                 <div class="col-12 d-flex justify-content-center">
                   <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
                   <img src="./img/git-log-simplificado.png" alt="img-git-log-oneline" class="mb-5 mt-5 imagen-terminal">
               </div>
 
-              <span class="col-12 fw-bold mt-4 mb-5">.git checkout "ID al que queremos ir"<span class="fst-italic fw-normal"> (Con este comando podemos transportarnos a un commit anterior. Para hacer esto copiamos y pegamos las primeras 6 cifras del commit, ej: git checkout f52097f. Tambien usamos este comando para movernos entre "ramas". Para hacerlo debemos copiar y pegar el nombre de la rama, ej: git checkout rama-secundaria. Si tipeamos git checkout main volveremos a la rama principal, y al ultimo commit realizado, osea "al presente")</span></span>
+              <span class="col-12 fw-bold mt-4 mb-5">.git checkout <span class="fst-italic">ID al que queremos ir</span><span class="fst-italic fw-normal"> (Con este comando podemos transportarnos a un commit anterior. Para hacer esto copiamos y pegamos las primeras 6 cifras del commit, ej: git checkout f52097f. Tambien usamos este comando para movernos entre "ramas". Para hacerlo debemos copiar y pegar el nombre de la rama, ej: git checkout rama-secundaria. Si tipeamos git checkout main volveremos a la rama principal, y al ultimo commit realizado, osea "al presente")</span></span>
 
-              <span class="col-12 fw-bold mt-4 mb-5">.git branch "nombre de rama-secundaria"<span class="fst-italic fw-normal"> (Con este comando podemos crear ramas secundarias, lineas separadas donde podemos trabajar sin interferir con el trabajo de otra persona. Una vez el trabajo esté terminado, las ramas pueden volver a unirse o "mergearse")</span></span>
+              <span class="col-12 fw-bold mt-4 mb-5">.git branch <span class="fst-italic">nombre de rama-secundaria</span><span class="fst-italic fw-normal"> (Con este comando podemos crear ramas secundarias, lineas separadas donde podemos trabajar sin interferir con el trabajo de otra persona. Una vez el trabajo esté terminado, las ramas pueden volver a unirse o "mergearse")</span></span>
 
               <div class="col-12 d-flex justify-content-center">
                 <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
@@ -97,7 +97,7 @@
                 <img src="./img/git-branch.png" alt="img-ramas" class="mb-5 mt-5 imagen-terminal">
               </div>
 
-              <span class="col-12 fw-bold mt-4 mb-5">.git merge "nombre de rama-secundaria"<span class="fst-italic fw-normal"> (Con este comando "mergeamos" las ramas secundarias con la principal. Esto permite unir el trabajo de varias personas en un solo proyecto. TENER CUIDADO y fijarse de siempre estar en la rama Main cuando quiera unir las ramas secundarias)</span></span>
+              <span class="col-12 fw-bold mt-4 mb-5">.git merge <span class="fst-italic">nombre de rama-secundaria</span><span class="fst-italic fw-normal"> (Con este comando "mergeamos" las ramas secundarias con la principal. Esto permite unir el trabajo de varias personas en un solo proyecto. TENER CUIDADO y fijarse de siempre estar en la rama Main cuando quiera unir las ramas secundarias)</span></span>
 
               <div class="col-12 d-flex justify-content-center">
                 <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
