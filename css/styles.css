@@ -2,6 +2,25 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(117, 30, 15);
+  transition: 0.3s ease;
+}
+
+a:hover{
+  color: rgb(240, 80, 51);
+}
+
+.nav {
+  position: fixed;
+  top: 80px;
+  right: 40px;
+  background: #f0f0f0;
+  padding: 15px 35px 15px 15px;
+  border-radius: 20px;
+}
+
 .header__logo {
     width: 150px;
 }
@@ -9,6 +28,16 @@
 .imagen-terminal {
     width: 800px;
     box-shadow: 10px 20px 40px 5px #000000;
+}
+
+.imagen-ignore {
+  height: 350px;
+  width: 200px;
+  box-shadow: 10px 20px 40px 5px #000000;
+}
+
+.imagen-ignore--mas-width {
+  width: 220px;
 }
 
 .imagen-flecha {
@@ -21,7 +50,38 @@
     height: 100px;
 }
 
+.seccionprincipal__margen {
+  margin: 50px 0 90px 0
+}
+
 .video-repositorio {
-    width: 1200px;
+    width: 1050px;
     box-shadow: 10px 20px 40px 5px #000000;
 }
+
+.video-gitflow {
+  height: 600px;
+  width: 600px;
+}
+
+.video-pullrequest {
+  width: 900px;
+}
+
+.iconoflecha {
+  width: 60px;
+  position: sticky;
+  bottom: 30px;
+  left: 95.5%;
+  margin: 20px;
+  transition: 0.3s ease;
+
+}
+
+.iconoflecha:hover {
+  width: 65px;
+  }
+
+  .parrafo-colaboradores {
+    width: 250px;
+  }

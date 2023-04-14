@@ -1,198 +1,590 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>Git</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Git</title>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="row justify-content-center pt-3">
-                <div class="col-auto">
-                    <img src="./img/git-icon.png" alt="icono-git" class="header__logo">
-                </div>
-            </div>
+
+  <header>
+
+    <div class="nav">
+      <nav class="d-flex flex-column align-items-center gap-1">
+        <span>Ir a:</span>
+        <ul>
+          <li><a href="#comandos">Comandos</a></li>
+          <li><a href="#conflictos">Conflictos</a></li>
+          <li><a href="#reseteos">Reseteos</a></li>
+          <li><a href="#repositorios">Repositorios</a></li>
+          <li><a href="#github-pages">Github pages</a></li>
+          <li><a href="#colaboradores">Colaboradores</a></li>
+          <li><a href="#readme">Readme</a></li>
+          <li><a href="#work-flow">Work Flow</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container" id="logo">
+      <div class="row justify-content-center pt-4 gap-3">
+        <div class="col-auto">
+          <img src="./img/git-icon.png" alt="logo-git" class="header__logo">
         </div>
-    </header>
-    <main>
-        <section class="container mt-3">
+      </div>
+    </div>
+  </header>
 
-                <h1 class="text-center">Git</h1>
+  <main>
 
-            <article class="row">
+    <section class="container mt-3">
 
-                <h2 class="col-12">¿Qué es git?</h2>
+      <h1 class="col-12 text-center mb-3 fw-bold display-5">Apuntes Git</h1>
 
-                <p class="col-12">Es un sistema de control de versiones. Genera una linea de tiempo de un proyecto a partir de una serie de puntos de guardado (Commits), a los cuales podriamos regresar "en el tiempo" si quisieramos. Nos abre las puertas al trabajo colaborativo ya que podemos trabajar en ramas independientes dentro de un mismo proyecto.</p>
+      <article class="row">
 
-                <p class="col-12">Una vez que git es instalado, podemos abrir una terminal dentro del Visual Studio Code:</p>
+        <h2 class="col-12 mt-5 mb-3">¿Qué es git?</h2>
 
-                <div class="col-12 d-flex justify-content-center mt-3">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
-                    <img src="./img/foto-terminal.png" alt="foto-terminal" class="mt-5 mb-4 imagen-terminal">
-                </div>
+        <p class="col-12">Es un sistema de control de versiones. Genera una linea de tiempo de un proyecto a partir de
+          una serie de puntos de guardado (Commits), a los cuales podriamos regresar "en el tiempo" si quisieramos. Nos
+          abre las puertas al trabajo colaborativo ya que podemos trabajar en ramas independientes dentro de un mismo
+          proyecto.</p>
 
-                <p class="col-12 mt-5">Siempre verificar que la terminal tenga abierta la carpeta del trabajo ya que si estamos en otra carpeta que tiene incluida la carpeta del proyecto y por algun motivo decidimos borrar archivos, podriamos accidentalmente borrar algo que no queriamos.</p>
+        <p class="col-12">Una vez que git es instalado, podemos abrir una terminal dentro del Visual Studio Code:</p>
 
-                <span class="col-12 text-decoration-underline mb-3">Comandos:</span>
+        <div class="col-12 d-flex justify-content-center mt-3">
+          <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
+          <img src="./img/foto-terminal.png" alt="foto-terminal" class="mt-5 mb-4 imagen-terminal">
+        </div>
 
-                <span class="col-12 fw-bold">.git config --global user.name "<span class="fst-italic">Nicolas Nunez</span>" <span class="fw-normal fst-italic">(El --global aplica una configuración global y gracias a ello no necesitamos volver a realizar este tipo de configuraciones la próxima vez que iniciemos un proyecto. No olvidar las comillas)</span></span>
+        <p class="col-12 my-5">Siempre verificar que la terminal tenga abierta la carpeta del trabajo ya que si estamos
+          en otra carpeta que tiene incluida la carpeta del proyecto y por algun motivo decidimos borrar archivos,
+          podriamos accidentalmente borrar algo que no queriamos.</p>
 
-                <span class="col-12 fw-bold">.git config --global user.email "<span class="fst-italic">niconunez.2104@gmail.com</span>" <span class="fw-normal fst-italic">(No olvidar las comillas)</span></span>
+      </article>
 
-                <span class="col-12 fw-bold">.git init <span class="fst-italic fw-normal">(Lo que va a hacer este comando es inicializar git dentro de la carpeta. Esta inicialización se hace una única vez en este proyecto. Convertimos de esta forma al proyecto en un repositorio que sera almacenado en la nube. Al mismo tiempo se genera una carpeta "invisible" en nuestro proyecto, si borramos esa carpeta debemos volver a inicializar git)</span></span>
+      <hr class="seccionprincipal__margen" id="comandos">
 
-                <span class="col-12 fw-bold">.git status<span class="fst-italic fw-normal"> (Me devuelve un estado del proyecto, los commits realizados y si hay archivos "untracked" apareceran en rojo)</span></span>
+    </section>
 
-                <div class="col-12 d-flex justify-content-center mt-4">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
-                    <img src="./img/foto-git-status.png" alt="img-git-status" class="mb-4 mt-5 imagen-terminal">
-                </div>
 
-                <span class="col-12 fw-bold mt-5">.git add <span class="fst-italic">nombre de archivo</span><span class="fst-italic fw-normal"> (Ejemplo del archivo: index.html) Suma un archivo a una etapa previa a hacer un commit.</span></span>
+    <div>
 
-                <span class="col-12 fw-bold mt-4 mb-4">.git commit -m "<span class="fst-italic">escriba su mensaje</span>"<span class="fst-italic fw-normal"> (Confirmaciones = commits, que siempre tienen que ir acompañadas de un mensaje. El mensaje tiene que describir las modificaciones del proyecto. No te olvides de incluir las comillas)</span></span>
+      <section class="container">
 
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                    <img src="./img/foto-git-commit.png" alt="img-git-commit" class="mb-4 mt-5 imagen-terminal">
-                </div>
+        <h3 class="col-12 text-center my-5 fw-bold fs-2 text-decoration-underline">Comandos</h3>
 
-                <span class="col-12 fw-bold mt-5 mb-4">.git log<span class="fst-italic fw-normal"> (Me muestra el listado de commits. Las seis primeras cifras de un commit son las que usamos para referenciarlo)</span></span>
+        <article class="row">
 
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                    <img src="./img/foto-git-log.png" alt="img-git-commit" class="mb-4 mt-5 imagen-terminal">
-                </div>
+          <h4 class="col-12 mt-2 mb-4 text-decoration-underline">Lista:</h4>
 
-                <span class="col-12 fw-bold mt-5 mb-5"><span class="text-warning">(</span><span class="text-primary">HEAD -> </span> <span class="text-success">main</span><span class="text-warning">)</span><span class="fst-italic fw-normal"> La afirmación HEAD (que podemos observar en la terminal de "git log") nos aclara donde estamos parados. En este caso es la rama principal, es decir: "main"</span></span>
+          <p class="col-12 fw-bold">.git config --global user.name "<span class="fst-italic">Nicolas Nunez</span>"
+            <span class="fw-normal fst-italic">(El --global aplica una configuración global y gracias a ello no
+              necesitamos volver a realizar este tipo de configuraciones la próxima vez que iniciemos un proyecto. No
+              olvidar las comillas) Si queremos corroborar el nombre de usuario tenemos que ingresar en la consola el comando git config user.name</span>
+          </p>
 
-                <span class="col-12 fw-bold mt-3 mb-5">.git log --oneline<span class="fst-italic fw-normal"> (Esta es una manera mas simplificada para ver el historial de los commits, es de mucha utilidad tambien porque solo nos muestra los primeros digitos del ID)</span></span>
+          <p class="col-12 fw-bold">.git config --global user.email "<span
+              class="fst-italic">niconunez.2104@gmail.com</span>" <span class="fw-normal fst-italic">(No olvidar las
+              comillas) Si queremos corroborar el email tenemos que ingresar en la consola el comando git config user.email</span></p>
 
-                <div class="col-12 d-flex justify-content-center">
-                  <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                  <img src="./img/git-log-simplificado.png" alt="img-git-log-oneline" class="mb-5 mt-5 imagen-terminal">
-              </div>
+          <p class="col-12 fw-bold">.git init <span class="fst-italic fw-normal">(Lo que va a hacer este comando es
+              inicializar git dentro de la carpeta. Esta inicialización se hace una única vez en este proyecto.
+              Convertimos de esta forma al proyecto en un repositorio que sera almacenado en la nube. Al mismo tiempo se
+              genera una carpeta "invisible" en nuestro proyecto, si borramos esa carpeta debemos volver a inicializar
+              git)</span></p>
 
-              <span class="col-12 fw-bold mt-4 mb-5">.git checkout <span class="fst-italic">ID al que queremos ir</span><span class="fst-italic fw-normal"> (Con este comando podemos transportarnos a un commit anterior. Para hacer esto copiamos y pegamos las primeras 6 cifras del commit, ej: git checkout f52097f. Tambien usamos este comando para movernos entre "ramas". Para hacerlo debemos copiar y pegar el nombre de la rama, ej: git checkout rama-secundaria. Si tipeamos git checkout main volveremos a la rama principal, y al ultimo commit realizado, osea "al presente")</span></span>
+          <p class="col-12 fw-bold">.git status<span class="fst-italic fw-normal"> (Me devuelve un estado del proyecto,
+              los commits realizados y si hay archivos "untracked" apareceran en rojo)</span></p>
 
-              <span class="col-12 fw-bold mt-4 mb-5">.git branch <span class="fst-italic">nombre de rama-secundaria</span><span class="fst-italic fw-normal"> (Con este comando podemos crear ramas secundarias, lineas separadas donde podemos trabajar sin interferir con el trabajo de otra persona. Una vez el trabajo esté terminado, las ramas pueden volver a unirse o "mergearse")</span></span>
+          <div class="col-12 d-flex justify-content-center mt-4">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
+            <img src="./img/foto-git-status.png" alt="img-git-status" class="mb-4 mt-5 imagen-terminal">
+          </div>
+
+          <p class="col-12 fw-bold mt-5">.git add <span class="fst-italic">nombre de archivo</span><span
+              class="fst-italic fw-normal"> (Ejemplo del archivo: index.html) Suma un archivo a una etapa previa a hacer
+              un commit. Más adelante, explicaré una forma de agregar varios archivos en simultaneo para ahorrarnos el
+              trabajo de ir sumando uno por uno.</span></p>
+
+          <p class="col-12 fw-bold mt-4 mb-4">.git commit -m "<span class="fst-italic">escriba su mensaje</span>"<span
+              class="fst-italic fw-normal"> (Confirmaciones = commits, que siempre tienen que ir acompañadas de un
+              mensaje. El mensaje tiene que describir las modificaciones del proyecto. No te olvides de incluir las
+              comillas)</span></p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-git-commit.png" alt="img-git-commit" class="mb-4 mt-5 imagen-terminal">
+          </div>
+
+          <p class="col-12 fw-bold mt-5 mb-4">.git log<span class="fst-italic fw-normal"> (Me muestra el listado de
+              commits. Las seis primeras cifras de un commit son las que usamos para referenciarlo)</span></p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-git-log.png" alt="img-git-commit" class="mb-4 mt-5 imagen-terminal">
+          </div>
+
+          <p class="col-12 fw-bold mt-5 mb-5"><span class="text-warning">(</span><span class="text-primary">HEAD ->
+            </span> <span class="text-success">main</span><span class="text-warning">)</span><span
+              class="fst-italic fw-normal"> La afirmación HEAD (que podemos observar en la terminal de "git log") nos
+              aclara donde estamos parados. En este caso es la rama principal, es decir: "main"</span></p>
+
+          <p class="col-12 fw-bold mt-3 mb-5">.git log --oneline<span class="fst-italic fw-normal"> (Esta es una manera
+              mas simplificada para ver el historial de los commits, es de mucha utilidad tambien porque solo nos
+              muestra
+              los primeros digitos del ID)</span></p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/git-log-simplificado.png" alt="img-git-log-oneline" class="mb-5 mt-5 imagen-terminal">
+          </div>
+
+          <p class="col-12 fw-bold mt-4 mb-5">.git checkout <span class="fst-italic">ID al que queremos ir</span><span
+              class="fst-italic fw-normal"> (Con este comando podemos transportarnos a un commit anterior. Para hacer
+              esto
+              copiamos y pegamos las primeras 6 cifras del commit, ej: git checkout f52097f. Tambien usamos este comando
+              para movernos entre "ramas". Para hacerlo debemos copiar y pegar el nombre de la rama, ej: git checkout
+              rama-secundaria. Si tipeamos git checkout main volveremos a la rama principal, y al ultimo commit
+              realizado,
+              osea "al presente"). Podriamos usar tambien el comando git checkout para ir a un commit viejo (tené en cuenta que varias secciones van a volver al estado en el que estaban en ese commit) y podria crear una rama secundaria. Desde ahi podrias hacerle modificaciones a una sección, volver a la rama MAIN y hacer un merge. Se recomienda hacer una rama secundaria en caso de que haya algo que no queramos añadir y no se pierdan datos sobreescribiendo los commits que vienen despues de esa rama</span></p>
+
+          <p class="col-12 fw-bold mt-4 mb-5">.git branch <span class="fst-italic">nombre de
+              rama-secundaria</span><span class="fst-italic fw-normal"> (Con este comando podemos crear ramas
+              secundarias,
+              lineas separadas donde podemos trabajar sin interferir con el trabajo de otra persona. Una vez el trabajo
+              esté terminado, las ramas pueden volver a unirse o "mergearse")</span></p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/ramas-secundarias.png" alt="img-ramas-secundarias" class="mb-5 mt-5 imagen-terminal">
+          </div>
+
+          <p class="col-12 fw-bold mt-4 mb-5">.git branch<span class="fst-italic fw-normal"> (Con este comando podemos
+              ver las ramas que han sido creadas)</span></p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/git-branch.png" alt="img-ramas" class="mb-5 mt-5 imagen-terminal">
+          </div>
+
+          <p class="col-12 fw-bold mt-4 mb-5">.git merge <span class="fst-italic">nombre de rama-secundaria</span><span
+              class="fst-italic fw-normal"> (Con este comando "mergeamos" las ramas secundarias con la principal. Esto
+              permite unir el trabajo de varias personas en un solo proyecto. TENER CUIDADO y fijarse de siempre estar
+              en
+              la rama Main cuando quiera unir las ramas secundarias)</span></p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-merge.png" alt="img-merge" class="mb-5 mt-5 imagen-terminal">
+          </div>
+
+          <p class="col-12 fw-bold mt-4 mb-5">.git reset --hard<span class="fst-italic"> ID de un commit
+              anterior</span><span class="fst-italic fw-normal"> (Se podria decir que es el reset mas riesgoso. Borra
+              todo lo que viene despues del commit al que "regresamos en el tiempo". Borra toda la información de los
+              commits y todo lo que tenia en la staging area. Ya no habrá forma de "volver al futuro")</span></p>
+
+          <p class="col-12 fw-bold mt-4 mb-5">.git reset --soft<span class="fst-italic"> ID de un commit
+              anterior</span><span class="fst-italic fw-normal"> (El soft reset no borra la informacion, lo unico que borra son los commits (borra el historial). Un ejemplo para saber cuando lo podemos utilizar podria ser si quisieramos limpiar, acomodar o emprolijar el historial de commits del proyecto. Cuando lo ejecutamos en la consola, todo lo agregado despues del commit al que nos dirigimos se mantiene. Otro dato interesante es el hecho de que "eso" que fue agregado despues del commit al que nos dirigimos se guarda en el staging area)</span></p>
+
+              <p class="col-12 fw-bold mt-4 mb-5">.git rm --cached<span class="fst-italic"> nombre de un archivo (Ej: git rm --cached pages/productos.html)</span><span class="fst-italic fw-normal"> (Con este comando podemos indicarle a git que deje de hacerle el seguimiento a un archivo)</span></p>
+
+              <p class="col-12 fw-bold mt-4 mb-5">.git remote add<span class="fst-italic"> origin<span class="fw-normal fst-normal"> (se suele dejar por defecto el nombre "origin")</span> <span class="fst-normal">+ URL del sitio<span class="fw-normal fst-normal"> (La URL la podemos tomar desde la seccion de nuestro repositorio en Github)</span></span></span><span class="fst-italic fw-normal"> (Con todo este comando podemos crear el repositorio remoto)</span></p>
+
+              <p class="col-12 fw-bold mt-4 mb-5">.git remote -v<span class="fst-italic fw-normal"> (Con este comando podemos verificar si el repositorio se creó correctamente)</span></p>
 
               <div class="col-12 d-flex justify-content-center">
                 <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                <img src="./img/ramas-secundarias.png" alt="img-ramas-secundarias" class="mb-5 mt-5 imagen-terminal">
+                <img src="./img/creacion-correcta-git-remote.png" alt="img-git-remote-verificacion" class="mb-5 mt-5 imagen-terminal">
               </div>
 
-              <span class="col-12 fw-bold mt-4 mb-5">.git branch<span class="fst-italic fw-normal"> (Con este comando podemos ver las ramas que han sido creadas)</span></span>
+              <p class="col-12 fw-bold mt-4 mb-5">.git branch -M <span class="fst-italic">nombre de rama principal o secundaria</span><span class="fst-italic fw-normal"> (Con este comando podemos cambiar el nombre de la rama principal. Este comando es mas que nada para cambiar el nombre Master a Main. Tambien podemos con el mismo comando cambiar le nombre de las ramas secundarias por si nos confundimos al tipearlas)</span></p>
+
+              <p class="col-12 fw-bold mt-4 mb-5">.git config --global init.defaultBranch main<span class="fst-italic fw-normal"> (Con este comando haremos que la rama principal tenga el nombre "main" cada vez que se inicialize un repositorio local en nuestra pc)</span></p>
+
+              <p class="col-12 fw-bold mt-4 mb-5">.git push -u origin main<span class="fst-italic fw-normal"> (La primera vez que enviamos información tenemos que utilizar este comando ya que debemos configurar un repositorio remoto a una rama). De esta manera le estamos asignando siempre a la rama main que cada vez que utilizemos el comando git push siempre envie la información al origin. Cuando le de enter, toda la informacion que se tiene en el repositorio local se manda al remoto. Aparecera una ventana emergente donde deberemos de iniciar sesión con nuestra cuenta de github. De esta manera ya queda abierta la sesión de github dentro de nuestro PC y ya no habra que iniciar sesión nuevamente. Este comando tambien se utiliza para las ramas secundarias de un proyecto. Si nunca enviamos informacion desde una rama secundaria al repositorio remoto debemos configurar ese repositorio a la rama secundaria. Se siguen los mismos pasos mencionados anteriormente solo que en vez de "git push -u origin main" tendremos que tipear en la consola 'git push -u origin "nombre de rama secundaria"'</span></p>
 
               <div class="col-12 d-flex justify-content-center">
                 <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                <img src="./img/git-branch.png" alt="img-ramas" class="mb-5 mt-5 imagen-terminal">
+                <img src="./img/foto-git-push.png" alt="img-git-push" class="mb-5 mt-5 imagen-terminal">
               </div>
+  
 
-              <span class="col-12 fw-bold mt-4 mb-5">.git merge <span class="fst-italic">nombre de rama-secundaria</span><span class="fst-italic fw-normal"> (Con este comando "mergeamos" las ramas secundarias con la principal. Esto permite unir el trabajo de varias personas en un solo proyecto. TENER CUIDADO y fijarse de siempre estar en la rama Main cuando quiera unir las ramas secundarias)</span></span>
+              <p class="col-12 fw-bold mt-4 mb-5">.git push<span class="fst-italic fw-normal"> (Para cargar los archivos del repositorio local al repositorio remoto utilizaremos este comando. Es el que se utiliza para enviar información. Si queremos enviar informacion de ramas secundarias debemos configurarlo de manera manual. En el repositorio remoto se van cargando cada una de las ramas por separado. El git push podes ejecutarlo al final de la jornada, no es necesario que constantemente estes pusheando tus modificaciones al repositorio remoto)</span></p>
+
+              <p class="col-12 fw-bold mt-4 mb-5">.git clone <span class="fst-italic fw-normal">(Es la herramienta que nos permite que otra persona pueda trabajar en nuestro proyecto de manera remota ya que puede clonarlo en su computadora. Lo primero que hay que hacer es, desde la computadora donde queremos clonar el proyecto, generar una carpeta. Adentro de esa carpeta presionamos el click derecho y seleccionamos la opcion "gitbash here". De esta forma aparecera la terminal de git. Luego tipeamos el comando "git clone" + el enlace del repositorio. Luego apretamos enter y listo. Tenemos el proyecto desde otra computadora)</span></p>
 
               <div class="col-12 d-flex justify-content-center">
                 <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                <img src="./img/foto-merge.png" alt="img-merge" class="mb-5 mt-5 imagen-terminal">
+                <img src="./img/clonar.png" alt="img-clonar" class="mb-5 mt-5 imagen-terminal">
               </div>
 
-            </article>
+              <p class="col-12 my-5 fw-bold fs-4">¿Como copiamos el enlace del repositorio?</p>
 
-            <hr class="mb-5 mt-5">
-
-            <article class="row">
-
-                <h2 class="col-12 text-center text-decoration-underline">Entonces:</h2>
-
-                <span class="col-12 mt-4 mb-5">El comando "git status" nos muestra el estado actual del repositorio. Nos permite verificar que archivos aun no fueron puestos para el commit. Tambien nos dice si hubo archivos que tuvieron modificaciones en base al ultimo commit que se realizó.</span>
-
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
-                    <img src="./img/foto-git-status-modificaciones.png" alt="git-status-modificaciones" class="imagen-terminal mt-5 mb-5">
-                </div>
-
-                <span class="col-12 mt-4 mb-3">Sumamos al "git add" el archivo que fue modificado, en el caso del ejemplo de arriba seria el "index.html".</span>
-
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                    <img src="./img/foto-git-add.png" alt="imagen-git-add" class="imagen-terminal mt-5 mb-5">
-                </div>
-
-                <span class="col-12 mt-4 mb-3">Ahora chequeamos con Git Status el estado del repositorio y confirmamos si ha sido guardada la modificacion</span>
-
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                    <img src="./img/foto-git-status-modificado.png" alt="imagen-git-status-modificacion" class="imagen-terminal mt-5 mb-5">
-                </div>
-
-                <span class="col-12 mt-4 mb-3">Cuando con el comando "git add" vinculamos un archivo, este se sumara a una "sala de espera" donde los archivos aguardan para ser confirmados en el repositorio de git</span>
-
-                <figure class="col-12 mt-4 mb-3 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
-                    <video autoplay muted loop plays-inline src="./videos/video-git-commit-repositorio.mp4" class="video-repositorio mb-5"></video>
-                </figure>
-
-                <span class="col-12 mt-4 mb-3">Posteriormente, con el comando git commit, ese archivo o  si son mas de uno, esos archivos, seran confirmados en el repositorio de GIT</span>
-
-                <figure class="col-12 mt-4 mb-3 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
-                    <video autoplay muted loop plays-inline src="./videos/video-git-commit-repositorio-2.mp4" class="video-repositorio mb-5"></video>
-                </figure>
-
-                <span class="col-12 mt-4 mb-3">Cuando todos los archivos son guardados en el repositorio de GIT, estos volveran a su estado inicial en el Working Directory (Nuestra PC)</span>
-
-                <figure class="col-12 mt-4 mb-3 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
-                    <video autoplay muted loop plays-inline src="./videos/video-git-commit-repositorio-3.mp4" class="video-repositorio mb-3"></video>
-                </figure>
-
-                <span class="col-12 mt-4 mb-3">Este mapa conceptual que fue planteado arriba es una representación de lo que se hace dia a dia en un proyecto colaborativo.</span>
-
-                <span class="col-12 mt-4 mb-3">En caso de que queramos añadir a la "staging area" mas de un archivo, no es necesario añadirlos uno por uno. En ese caso lo que hay que hacer es:</span>
-
-                <div class="col-12 d-flex justify-content-center">
-                    <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                    <img src="./img/git-add-con-punto.png" alt="imagen-git-add-con-punto" class="imagen-terminal mt-5 mb-5">
-                </div>
-
-                <span class="col-12 mt-4 mb-3">En definitiva, el comando <span class="fw-bold">"git add ."</span> es el que mas usaremos debido a su practicidad.</span>
-
-                <span class="col-12 mt-4 mb-5"><span class="text text-decoration-underline">Observación:</span> Hay veces que no podemos escribir cuando estamos en la terminal viendo el listado de commits. En estos casos debemos usar las flechas del teclado y presionar la letra Q sobre la opcion END que aparece al final de la terminal. De esta forma podremos volver a escribir en la terminal</span>
-
-                <div class="col-12 d-flex justify-content-center">
-                  <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                  <img src="./img/usar-flechas-para-salir.png" alt="imagen-salir-con-flechas" class="imagen-terminal mt-5 mb-5">
-              </div>
-
-              <span class="col-12 mt-4 mb-3">A continuación hay un diagrama hecho en clase que representa el funcionamiento de las ramas secundarias...</span>
-
-              
               <div class="col-12 d-flex justify-content-center">
                 <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
-                <img src="./img/foto-diagrama-ramas.png" alt="imagen-diagrama-ramas" class="imagen-terminal mt-5 mb-5">
-            </div>
+                <img src="./img/clonar-2.png" alt="img-clonar-2" class="mb-5 mt-5 imagen-terminal">
+              </div>
 
-            </article>
+              <p class="col-12 fw-bold mt-4 mb-5">.git pull<span class="fst-italic fw-normal"> (Funciona de una manera similar al comando "git merge", asi que tené en cuenta que se pueden generar <a href="#conflictos">conflictos.</a> Con el comando "git pull" podemos traer todas las modificaciones, archivos añadidos, informacion, etc. del repositorio remoto ya que, en un trabajo que es colaborativo, constantemente se le estan haciendo modificaciones al proyecto. Si mi trabajo está actualizado con esas modificaciones, no podre ejecutar el comando "git pull". Se recomienda que siempre que se empieze con la jornada laboral, el primer comando que se ejecute en la consola de git sea "git pull" por lo mencionado recién. Una vez que se hayan corregido los posibles conflictos, podre hacer mi git add ., git commit -m"...", y mi git push, ya que puede haber información que no tuvo conflictos pero que esta solo en mi repositorio local asi que debe ser pusheada al remoto")</span></p>
 
-        </section>
+              <p class="col-12 fw-bold mt-4 mb-5">.git ignore<span class="fst-italic fw-normal"> (Cuando ejecutamos el comando "git add ." estamos enviando TODOS los archivos a la staging area. Hay veces que queremos ignorar ciertos archivos o carpetas, como puede ser cuando estemos trabajando con react y npm con su biblioteca de javascript ya que son carpetas que pesan mucho y contiene archivos que son descartables. Es por esto que no es necesario estar pusheandolas al repositorio remoto)</span></p>
 
-    </main>
+              <p class="col-12 my-3">Nosotros podemos crear un archivo en el proyecto que se llame .gitignore (No te olvides del punto que va al principio)</p>
 
-    <footer>
+              <div class="col-12 d-flex justify-content-center">
+                <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                <img src="./img/git-ignore.png" alt="img-ignore" class="mb-5 mt-5 imagen-ignore">
+              </div>
 
-    </footer>
+              <p class="col-12 my-3">En este ejemplo crearemos una carpeta que se llama basura para usarla de demostración</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+              <div class="col-12 d-flex justify-content-center">
+                <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                <img src="./img/basura-imagen.png" alt="img-basura-ejemplo-git-ignore" class="mb-5 mt-5 imagen-ignore imagen-ignore--mas-width">
+              </div>
+
+              <p class="col-12 my-3">Con tan solo abrir el archivo .gitignore y tipear el nombre de la carpeta dentro ya podemos ignorar la carpeta "basura" en los proximos "git push". Si queremos ignorar a un archivo en especifico debemos especificarla terminacion. Ejemplo: basura.css. Acordarse que cada archivo o carpeta que se ignora debe ir en una linea diferente.</p>
+
+              <div class="col-12 d-flex justify-content-center">
+                <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+                <img src="./img/git-ignore-carpeta-basura.png" alt="img-git-ignore-carpeta-basura" class="mb-5 mt-5 imagen-terminal">
+              </div>
+
+        </article>
+
+        <hr class="mb-5 mt-5">
+
+        <article class="row">
+
+          <h4 class="col-12 text-center text-decoration-underline">Entonces:</h4>
+
+          <p class="col-12 mt-4 mb-5">El comando "git status" nos muestra el estado actual del repositorio. Nos permite
+            verificar que archivos aun no fueron puestos para el commit. Tambien nos dice si hubo archivos que tuvieron
+            modificaciones en base al ultimo commit que se realizó.</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-git-status-modificaciones.png" alt="git-status-modificaciones"
+              class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">Sumamos al "git add" el archivo que fue modificado, en el caso del ejemplo de
+            arriba seria el "index.html".</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-git-add.png" alt="imagen-git-add" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">Ahora chequeamos con Git Status el estado del repositorio y confirmamos si ha
+            sido guardada la modificacion</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-git-status-modificado.png" alt="imagen-git-status-modificacion"
+              class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">Cuando con el comando "git add" vinculamos un archivo, este se sumara a una "sala
+            de espera" donde los archivos aguardan para ser confirmados en el repositorio de git</p>
+
+          <figure class="col-12 mt-4 mb-3 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
+            <video autoplay muted loop plays-inline src="./videos/video-git-commit-repositorio.mp4"
+              class="video-repositorio mb-5"></video>
+          </figure>
+
+          <p class="col-12 mt-4 mb-3">Posteriormente, con el comando git commit, ese archivo o si son mas de uno, esos
+            archivos, seran confirmados en el repositorio de GIT</p>
+
+          <figure class="col-12 mt-4 mb-3 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
+            <video autoplay muted loop plays-inline src="./videos/video-git-commit-repositorio-2.mp4"
+              class="video-repositorio mb-5"></video>
+          </figure>
+
+          <p class="col-12 mt-4 mb-3">Cuando todos los archivos son guardados en el repositorio de GIT, estos volveran
+            a su estado inicial en el Working Directory (Nuestra PC)</p>
+
+          <figure class="col-12 mt-4 mb-3 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
+            <video autoplay muted loop plays-inline src="./videos/video-git-commit-repositorio-3.mp4"
+              class="video-repositorio mb-3"></video>
+          </figure>
+
+          <p class="col-12 mt-4 mb-3">Este mapa conceptual que fue planteado arriba es una representación de lo que se
+            hace dia a dia en un proyecto colaborativo ⇧</p>
+
+          <p class="col-12 mt-4 mb-3">En caso de que queramos añadir a la "staging area" mas de un archivo, no es
+            necesario añadirlos uno por uno. En ese caso lo que hay que hacer es:</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/git-add-con-punto.png" alt="imagen-git-add-con-punto" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">En definitiva, el comando <span class="fw-bold">"git add ."</span> es el que mas
+            usaremos debido a su practicidad.</p>
+
+          <p class="col-12 mt-4 mb-5"><span class="text text-decoration-underline">Observación:</span> Hay veces que no
+            podemos escribir cuando estamos en la terminal viendo el listado de commits. En estos casos debemos usar las
+            flechas del teclado y presionar la letra Q sobre la opcion END que aparece al final de la terminal. De esta
+            forma podremos volver a escribir en la terminal</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/usar-flechas-para-salir.png" alt="imagen-salir-con-flechas"
+              class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">A continuación hay un diagrama hecho en clase que representa el funcionamiento de
+            las ramas secundarias...</p>
+
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-diagrama-ramas.png" alt="imagen-diagrama-ramas" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+        </article>
+
+        <hr class="my-5" id="conflictos">
+
+        <article class="row">
+
+          <h4 class="col-12 text-center fw-bold text-decoration-underline mt-5">Conflictos:</h4>
+
+          <p class="col-12 mt-4 mb-3">Habrá veces en el trabajo colaborativo donde mas de una persona edita una misma
+            seccion dentro de un mismo proyecto. Cuando se intenten fusionar las ramas que ambos estan trabajando por
+            separado, surgirá un "conflicto". Tengamos en cuenta que hasta que no exista el merge, los cambios o
+            ediciones de una rama no se veran reflejados en la otra.
+          </p>
+
+          <p class="col-12 mt-4 mb-3">Considerando que ambas ramas ejecutaron en paralelo los comandos "git add ." y
+            'git
+            commit -m "Mensaje"', cuando ocurra el merge (siempre desde la rama main) sucedera esto:</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-conflicto.png" alt="imagen-conflicto" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">Siempre leamos lo que la consola nos recomienda cuando algo sucede luego de
+            ejecutar
+            un comando. En este caso debo resolver el conflicto y una vez que el conflicto este resuelto voy a comitear
+            el
+            resultado para finalizar esa fusión de las ramas</p>
+
+          <p class="col-12 mt-4 mb-3">Cuando sucede un conflicto, git escribe LITERALMENTE sobre el html. Sepamos
+            tambien
+            que Visual Studio Code tiene una integración con git. Gracias a esto, cuando aparece un conflicto, este es
+            señalado con colores y botones con el fin de solucionarlo</p>
+
+          <p class="col-12 mt-4 mb-3">En el caso particular que tenemos en la imagen de arriba ⇧, vamos a elegir la
+            opción
+            "Aceptar cambio actual". Haciendo esto, los cambios que venian de ramas secundarias, se borran. Luego,
+            procederemos a ejecutar en la consola (sobre la rama main) "git add ." y 'git commit -m "Mensaje"'. Con esto
+            ya realizado, se termina el proceso de merge entre las dos ramas habiendo resuelto el conflicto. ¡Ojo!
+            Aveces
+            el conflicto puede aparecer en mas de un archivo. En ese caso, se repite el proceso para cada uno de ellos.
+          </p>
+
+          <p class="col-12 mt-4 mb-3">Una vez que el proyecto ya esta alojado en el repositorio remoto y ya se encuentran colaboradores trabajando en el, pueden surgir problemas cuando dichos colaboradore hacen modificaciones y lo pushean al repositorio remoto. ¿Por que? Porque si yo luego modifico mi proyecto y tambien le hago el git push puede aparecer este aviso en la consola</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/aviso-push.png" alt="imagen-conflicto-push" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">Si mi repositorio local no está actualizado con la información que está en el remoto, yo no podre ejecturar el comando "git push" ¿Como lo actualizo? con el comando <span class="fw-bold">git pull</span></p>
+
+        </article>
+
+        <hr class="my-5" id="reseteos">
+
+        <article class="row">
+
+          <h4 class="col-12 text-center fw-bold text-decoration-underline mt-5 mb-4">Reseteos</h4>
+
+          <p class="col-12 mt-4 mb-3">Ya hemos hablado un poco sobre los reseteos en este sitio en la sección de <span class="fw-bold fst-italic">comandos</span>. Hay tres tipos de reseteos, pero por el momento veremos dos de ellos. Por un lado
+            tenemos el "Hard reset" y el "Soft reset ¿Que hacemos con estos reseteos? Lo que hacemos es "volver en el tiempo" a un commit anterior del comit donde nos encontramos y borrar en mayor o menor medida los commits, informacion y/o datos almacenados en el staging area.</p>
+
+            <p class="col-12 mt-4 mb-5">Podriamos usar el comando soft reset, por ejemplo, si nos hubiesemos olvidado de agregarle informacion a una seccion de la página en un commit que hice antes. Viajamos en el tiempo atras con el soft reset y luego le agregamos lo que faltaba. Tené en cuenta que el commit donde vas a guardar esa edicion sobreescribirá todo lo que venia despues del commit al cual viajaste desde el "futuro"</p>
+
+
+        </article>
+
+        <hr class="my-5" id="repositorios">
+
+        <article class="row">
+
+          <h4 class="col-12 text-center fw-bold text-decoration-underline mt-5 mb-4">Repositorio en Github</h4>
+
+          <p class="col-12 mt-4 mb-3">Que hacemos cuando creamos un repositorio en <span class="fw-bold fst-italic">Github? </span>Primero, a nuestro repositorio local le tenemos que asignar un repositorio remoto para luego enviarle los archivos de nuestro proyecto. En la pagina de Github nos aparecen dos opciones de comando cuando creamos un repositorio</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/foto-comandos-github.png" alt="imagen-comandos-github-repositorio" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-5">La opcion de arriba ⇧ es por si estamos arrancando con un proyecto nuevo, mientras que la de abajo ⇩ es para uno ya empezado.</p>
+
+          <p class="col-12 mt-4 mb-3 fw-bold">Entonces para la primera vez, luego de git init, git add y git commit  los pasos serian: </p>
+
+          <ul class="col-12 mb-5">
+            <li>git remote add origin + URL del repositorio</li>
+            <li>Verificar que el nombre de la rama principal sea "main" y no "master"</li>
+            <li>git push -u origin main</li>
+          </ul>
+
+          <hr class="my-5" id="github-pages">
+
+          <h4 class="col-12 mt-5 mb-3 fw-bold text-center text-decoration-underline fs-5">Github pages</h4>
+
+          <p class="col-12 mt-4 mb-3">Esta opción de github nos permite visualizar un proyecto como si ya estuviese cargado en un servidor. De esta forma lo podremos ver desde el navegador, tanto en una computadora de escritorio, como en un celular o una televisión.</p>
+
+          <h5 class="col-12 mt-4 mb-3 fs-5 text-decoration-underline">Pasos para activar Github pages:</h5>
+
+          <div class="col-12 d-flex justify-content-center gap-5 my-5">
+            <p class="fw-bold">1er Paso</p>
+            <img src="./img/pasos-pages-1.png" alt="paso1-pages" class="imagen-terminal">
+          </div>
+
+          <div class="col-12 d-flex justify-content-center gap-5 my-5">
+            <p class="fw-bold">2do Paso</p>
+            <img src="./img/foto-pasos-2.png" alt="paso2-pages" class="imagen-terminal">
+          </div>
+
+          <div class="col-12 d-flex justify-content-center gap-5 my-5">
+            <p class="fw-bold">3er Paso</p>
+            <img src="./img/pasos-3.png" alt="paso3-pages" class="imagen-terminal">
+          </div>
+
+          <p class="col-12 my-5 text-center">Tener en cuenta que hay que esperar un poco para que carguen los archivos</p>
+
+
+          <div class="col-12 d-flex justify-content-center gap-5 my-5">
+            <p class="fw-bold">4to Paso</p>
+            <img src="./img/pasos-4.png" alt="paso4-pages" class="imagen-terminal">
+          </div>
+
+          <div class="col-12 d-flex justify-content-center gap-5 my-5">
+            <p class="fw-bold">5to Paso</p>
+            <img src="./img/pasos-5.png" alt="paso5-pages" class="imagen-terminal">
+          </div>
+
+          <p class="col-12 my-5 text-center">¡Listo! Ya podes visualizar tu pagina en un navegador</p>
+
+          <hr class="my-5" id="colaboradores">
+
+          <h4 class="col-12 mt-5 mb-3 fw-bold text-center text-decoration-underline fs-5">Como agregar colaboradores</h4>
+
+          <div class="col-12 d-flex justify-content-center align-items-center gap-5 my-5">
+            <p class="parrafo-colaboradores fw-bold">Las personas que sean aceptadas como colaboradores podran crear ramas secundarias y tambien ejecutar el comando git push con información nueva para el sitio</p>
+            <img src="./img/colaboradores.png" alt="colaboradores" class="imagen-terminal">
+          </div>
+
+        </article>
+
+        <hr class="my-5" id="readme">
+
+        <article class="row">
+
+          <h4 class="col-12 text-center fw-bold text-decoration-underline mt-5 mb-4">Archivo README</h4>
+
+          <p class="col-12 mt-4 mb-3">Que hacemos con el archivo <span class="fw-bold fst-italic">README? </span>En nuestro repositorio remoto nos aparecerá esta opción</p>
+
+          <div class="col-12 d-flex justify-content-center align-items-center gap-4 my-5">
+            <p class="fw-bold">Aqui es donde añadiremos el archivo readme, pero primero deberemos crearlo</p>
+            <img src="./img/readme.png" alt="readme" class="imagen-terminal">
+          </div>
+
+          <p class="col-12 my-5 text-center">Crearemos el archivo readme en nuesto proyecto</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/archivo-readme-creacion.png" alt="img-creacion-readme" class="mb-5 mt-5 imagen-ignore imagen-ignore--mas-width">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">En la esquina superior derecha del visual studio code tenemos esta opcion, hagamosle click</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/herramienta-readme.png" alt="herramienta-readme-vsc" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">Nos aparecera una ventana a un costado donde nosotros podemos editar el archivo readme</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/herramienta-readme-uso.png" alt="herramienta-readme-uso-vsc" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3">En el sitio web "Editor.md" podemos ver como podemos editar con simbolos y distintos estilos nuestro archivo readme</p>
+
+          <div class="col-12 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha imagen-flecha--pequeña">
+            <img src="./img/editor-md.png" alt="editor.md" class="imagen-terminal mt-5 mb-5">
+          </div>
+
+          <p class="col-12 mt-4 mb-3"><span class="fw-bold fs-5">¿Para que nos sirve el archivo readme en nuestro proyecto?</span> Podemos crearlos para contar de que se trata nuestro proyecto, en que contexto se hizo, que herramientas se utilizaron, cual es el objetivo del proyecto. Basicamente es la documentación de ese repositorio</p>
+
+
+        </article>
+
+        <hr class="my-5" id="work-flow">
+
+        <article class="row">
+
+          <h4 class="col-12 text-center fw-bold mt-5 mb-4">Entonces, habiendo aprendido todo... ¿Como es el flujo de trabajo ahora?</h4>
+
+          <p class="col-12 my-3">Supongamos que ya arrancamos con un proyecto y le agregamos contenido a las secciones. Procedemos con el comando "git add .", luego con 'git commit -m"Un mensaje"' Y AHORA le sumaremos el comando "git push" para efectivamente mandar lo que agregamos al repositorio remoto</p>
+
+          <p class="col-12 my-3"><span class="text-decoration-underline">Recordá:</span> Add, commit, push... Add, commit, push...</p>
+
+          <p class="col-12 my-3">Cuando un proyecto ya este alojado en github, cada vez que ejecutemos el comando git push desde la consola del repositorio local, los cambios se actualizaran en el repositorio remoto.</p>
+
+          <p class="col-12 my-3">Este es el momento para chequear que todas las vinculaciones o rutas a las secciones de nuestro sitio esten bien escritas, las imagenes o los hypertextos no tengan mayusculas, tildes, espacios, etc. Acordarse que todo es casesensitive. Es muy común que aveces nos aparezca "error 404" cuando queramos cargar una seccion del sitio, o que una imagen tenga el vinculo roto. Es aqui donde debemos revisar que todo este bien escrito y vinculado</p>
+
+          <h4 class="col-12 text-center fw-bold my-4 text-decoration-underline">Git flow:</h4>
+
+          <div class="col-12 d-flex justify-content-center my-4">
+            <video controls src="./videos/git-flow.mp4" class="video-gitflow"></video>
+          </div>
+
+          <p class="col-12 my-5">Cuando estemos en un contexto empresarial. Nosotros no podemos directamente pushear y mergear nuestra rama secundaria a la rama main. Antes el push debe ser verificado por el lider del proyecto, y para eso necesitamos solicitar en github un push request. En el siguiente video podemos observar como se genera dicho push request</p>
+
+          <figure class="col-12 mt-4 mb-3 d-flex justify-content-center">
+            <img src="./img/flecha.png" alt="img-flecha" class="imagen-flecha">
+            <video controls src="./videos/pull-request.mp4"
+              class="video-pullrequest mb-3"></video>
+          </figure>
+
+        </article>
+
+
+      </section>
+
+      <a href="#logo" class="container-flecha"><img src="./img/flechitaparaarriba.png" class="iconoflecha"
+          alt="iconoflecha"></a>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
 
 </body>
 
