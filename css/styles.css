@@ -94,6 +94,8 @@ a:hover{
       top: 0;
       display: flex;
       justify-content: center;
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
     }
     .nav__ul {
       display: flex;
@@ -112,8 +114,12 @@ a:hover{
   }
 
   @media (max-width: 1022px) {
+    .nav {
+      padding: 0;
+    }
     .nav__ul {
-      font-size: 0.7rem;
+      font-size: 0.9rem;
+      gap: 17px;
     }
     .imagen-terminal {
       width: 450px;
@@ -128,8 +134,8 @@ a:hover{
 
   @media (max-width: 806px) {
     .nav__ul {
-      gap: 15px;
-      font-size: 0.6rem;
+      gap: 12px;
+      font-size: 0.75rem;
     }
   }
 
@@ -148,8 +154,9 @@ a:hover{
 
   @media (max-width: 664px) {
     .nav__ul {
+      padding-left: 0;
       gap: 10px;
-      font-size: 0.5rem;
+      font-size: 0.655rem;
     }
     .nav {
       padding: 0;
@@ -179,6 +186,7 @@ a:hover{
     }
     .nav__ul {
       display: block;
+      padding-left: 8px;
     }
     .nav {
     display: block;
@@ -186,7 +194,7 @@ a:hover{
     top: 10px;
     right: 10px;
     background: #f0f0f0;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 5px 0px 5px;
     border-radius: 20px;
   }
   }
